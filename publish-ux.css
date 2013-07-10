@@ -1,5 +1,6 @@
 
-.publish-ux-button {
+.publish-ux-button-wrap {
+	min-height: 61px;
 	margin-bottom: 1em;
 }
 
@@ -60,5 +61,6 @@
 
 .publish-ux-button div button:first-child {
 	text-align: left;
+	min-width: 249px;
 	width: calc( 100% - 2.4em + 1px );
 }

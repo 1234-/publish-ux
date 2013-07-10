@@ -24,17 +24,19 @@ class Publish_UX {
 		wp_enqueue_style( 'jquery-ui-smoothness', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css' );
 		wp_enqueue_style( 'publish-ux', plugins_url( 'publish-ux.css', __FILE__ ) );
 		?>
-		<div class="publish-ux-button">
-			<div>
-				<button type="submit" id="publish-ux-button">Publish</button>
-				<button>Select an action</button>
+		<div class="publish-ux-button-wrap">
+			<div class="publish-ux-button">
+				<div>
+					<button type="submit" id="publish-ux-button">Publish</button>
+					<button>Select an action</button>
+				</div>
+				<ul>
+					<li><a href="#">Publish</a></li>
+					<li><a href="#">Save Draft</a></li>
+					<li><a href="#">Preview</a></li>
+					<li><a href="#">Move to Trash</a></li>
+				</ul>
 			</div>
-			<ul>
-				<li><a href="#">Publish</a></li>
-				<li><a href="#">Save Draft</a></li>
-				<li><a href="#">Preview</a></li>
-				<li><a href="#">Move to Trash</a></li>
-			</ul>
 		</div>
 		<script>
 			// Largely lifted straight off of http://jqueryui.com/button/#splitbutton
@@ -74,6 +76,16 @@ class Publish_UX {
 										$( "#publish-ux-button .ui-button-text" ).text( $(this).text() );
 									});
 								});
+				$(window).scroll(function(){
+					var publishUxButton = $('.publish-ux-button')[0];
+					if ( window.pageYOffset > publishUxButton.parentNode.offsetTop ) {
+						publishUxButton.style.position = 'fixed';
+						publishUxButton.style.top = '29px';
+						publishUxButton.style.zIndex = '200';
+					} else {
+						publishUxButton.style.position = 'static';
+					}
+				});
 			});
 		</script>
 		<?php
