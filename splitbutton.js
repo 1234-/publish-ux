@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+(function($) {
 	// Grab the initial elements (button and select) and wrap 'em up.
 	$('.splitbutton').siblings('select').each(function(){
 		var wrap = $(this).siblings('.splitbutton')
@@ -44,4 +44,4 @@ jQuery(document).ready(function($){
 			// $(this).siblings('.splitbutton').click();
 		});
 	});
-});
+})(jQuery);
