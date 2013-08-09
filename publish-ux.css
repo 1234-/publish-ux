@@ -67,6 +67,7 @@
 	cursor: pointer;
 	padding: 5px 20px 5px 0;
 	border-bottom: 1px solid #999;
+	white-space: nowrap;
 }
 
 .splitbutton-dropdown ul li:first-child {
