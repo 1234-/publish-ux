@@ -42,7 +42,18 @@
 }
 
 .splitbutton-dropdown ul {
-	display: none;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: visibility 0 linear 0.1s,
+	                    opacity 0.1s linear;
+	-moz-transition:    visibility 0 linear 0.1s,
+	                    opacity 0.1s linear;
+	-ms-transition:     visibility 0 linear 0.1s,
+	                    opacity 0.1s linear;
+	-o-transition:      visibility 0 linear 0.1s,
+	                    opacity 0.1s linear;
+	transition:         visibility 0 linear 0.1s,
+	                    opacity 0.1s linear;
 	position: absolute;
 	top: 100%;
 	right: -1px;
@@ -59,7 +70,13 @@
 }
 
 .splitbutton-dropdown:hover ul {
-	display: block;
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition-delay: 0;
+	-moz-transition-delay:    0;
+	-ms-transition-delay:     0;
+	-o-transition-delay:      0;
+	transition-delay:         0;
 }
 
 .splitbutton-dropdown ul li {
